@@ -242,6 +242,10 @@ class TestSparseArrayAnalytics:
                 np.array([1, 2, np.nan, 4, 5], dtype=float),  # null data
                 SparseArray(np.array([1.0, 3.0, np.nan, 7.0, 12.0])),
             ),
+            (
+                np.array([1, 2, 3, 4, 5], dtype=int),  # int data (GH-62669)
+                SparseArray(np.array([1, 3, 6, 10, 15], dtype=int)),
+            )
         ],
     )
     @pytest.mark.parametrize("numpy", [True, False])
